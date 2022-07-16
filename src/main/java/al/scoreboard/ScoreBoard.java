@@ -9,10 +9,6 @@ import java.util.stream.Collectors;
 
 public class ScoreBoard {
 
-    public static void reset() {
-        ScoreBoardStorage.newInstance();
-    }
-
     public static Game newGame(String homeTeam, String awayTeam) {
         return ScoreBoardStorage.getInstance().newGame(homeTeam, awayTeam);
     }
@@ -40,6 +36,10 @@ public class ScoreBoard {
     public static void printOrderedByTotalScore() {
         AtomicInteger count = new AtomicInteger(0);
         System.out.printf("%s\n", listOrderedByTotalScore().stream().map(game -> String.format("%d. %s %s - %s %s", count.incrementAndGet(), game.getHomeTeam(), game.getHomeTeamScore(), game.getAwayTeam(), game.getAwayTeamScore())).collect(Collectors.joining("\n")));
+    }
+
+    public static void reset() {
+        ScoreBoardStorage.newInstance();
     }
 
 }

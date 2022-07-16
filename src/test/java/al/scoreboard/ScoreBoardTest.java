@@ -42,6 +42,7 @@ public class ScoreBoardTest {
         }
 
         List<Game> games = ScoreBoard.listOrderedByTotalScore();
+        ScoreBoard.printOrderedByTotalScore();
         for (int i = 0; i < games.size() - 1; i++) {
             Game first = games.get(i);
             Game second = games.get(i + 1);

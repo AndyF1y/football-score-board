@@ -72,6 +72,7 @@ public class Game {
 
     public void finish() {
         checkIsNotFinished();
+        checkIsStarted();
         this.finishedAt = Instant.now();
     }
 
